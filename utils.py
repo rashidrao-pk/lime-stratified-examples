@@ -1,10 +1,3 @@
-''' 
-Supported Functions File for Article 'Using stratified sampling to improve LIME Image Explanations'
-Code Available:       https://github.com/amparore/lime-stratified lime_stratified
-Examples Available:   https://github.com/rashidrao-pk/lime-stratified-examples
-If you use this code, please cite us: 
-
-'''
 import matplotlib.pyplot as plt
 import os
 import cv2
@@ -241,33 +234,32 @@ def get_img_mask_lime(explanation,TL, sub_results,ttl,positive_only=True,save_im
         plt.savefig(sub_results+'//ExpByLime'+ttl+'.png',transparent = True,bbox_inches = 'tight',pad_inches = 0.02, dpi = 150)
     plt.show()
 
-def evaluate_explanation(explanation,data,labels,class_prob,data_to_csv,model_name,seg_range):
+def evaluate_explanation(explanation,X,all_Ys,beta,f_x,RC_Y,r2_score,data_to_csv,model_name):
     ''' 
     This function will evaluate the explanation produced by LIME-Image
     Args:
         explanation  :   explanation computed by LIME image Module 
-        data         :   data returned and being used by LIME explain_instance module
-        labels       :   labels (for generated data) returned and being used by LIME explain_instance module
-        data_to_csv  :   A dictionary having keys and values to be saved in .csv file
+        X            :   data returned and being used by LIME explain_instance module
+        all_Ys       :   labels (for generated data) returned and being used by LIME explain_instance module
+        data_to_csv  :   A Initial dictionary having keys and values to be saved in .csv file
         model_name   :   Blackbox Model Name as string being used 
         seg_range    :   Segments Range (25-50,50-100,100-150,150-200)
     Return:
         
     '''
     TL = explanation.top_labels[0]    
-    Y =labels[:,TL]
-    beta = [v for _,v in explanation.local_exp[TL]]
+    Y =all_Ys[:,TL]
     maxval = np.max(np.abs(beta))
-    beta = np.array(beta)
+#     beta = [v for _,v in explanation.local_exp[TL]]
+#     beta = np.array(beta)
     g_x = explanation.local_pred[TL][0]
     r2_score = explanation.score[TL]
     local_pred = explanation.local_pred[TL]
     intercept = explanation.intercept[TL]
-    r2_score = explanation.score[TL]
- 
-    data_to_csv['segs_range']     = seg_range
+#     r2_score = explanation.score[TL]
+
     data_to_csv['model_name']     = model_name
-    data_to_csv['f_x']            = class_prob
+    data_to_csv['f_x']            = f_x
     data_to_csv['g_x']            = explanation.local_pred[TL][0]
     data_to_csv['q05_Y']          = np.quantile(Y,0.05)
     data_to_csv['q95_Y']          = np.quantile(Y,0.95)
@@ -295,8 +287,7 @@ def evaluate_explanation(explanation,data,labels,class_prob,data_to_csv,model_na
     data_to_csv['min_beta']       = np.min(beta)
     data_to_csv['cv_beta']        = np.std(beta) / np.mean(beta)
     data_to_csv['cv_abs_beta']    = np.std(np.abs(beta)) / np.mean(np.abs(beta))
-    data_to_csv['RC_Y']           = (np.quantile(Y,0.99) - np.quantile(Y,0.01)) / class_prob
-
+    data_to_csv['RC_Y']           = RC_Y #(np.quantile(Y,0.99) - np.quantile(Y,0.01)) / f_x
 def time_stamp():
     today = date.today()
     now = datetime.now()
@@ -342,12 +333,27 @@ def search_segment_number(image, target_seg_no, init_max_dist=100,init_kernel_si
         else:
             lsn, lmd = msn, mmd
     return rmd,init_kernel_size,random_seed,ratio
-def merge_two_dicts(x, y):
-    """Given two dictionaries, merge them into a new dict as a shallow copy."""
-    z = x.copy()
-    z.update(y)
+# def merge_two_dicts(x, y):
+#     """Given two dictionaries, merge them into a new dict as a shallow copy."""
+#     z = x.copy()
+#     z.update(y)
     return z
 def segs_sections(segs,seg_list):
         for sl in  range(0,len(seg_list),1):
             if segs >= seg_list[sl][0] and segs <=seg_list[sl][1]:
                 return [seg_list[sl][0],seg_list[sl][1]]
+
+def get_beta_from_expl(expl):
+    n = len(np.unique(expl.segments))
+    beta = np.zeros(n)
+    for i,v in expl.local_exp[ expl.top_labels[0] ]:
+        beta[i] = v
+    return beta
+def get_RCY(Y,class_prob):
+    return (np.quantile(Y,0.99) - np.quantile(Y,0.01)) / class_prob
+    
+def heatmap_from_beta(segments, beta):
+    heatmap = np.zeros_like(segments, dtype=np.float32)
+    for segm, importance in enumerate(beta):
+        heatmap[ segments==segm ] += importance 
+    return heatmap
