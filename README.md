@@ -1,4 +1,6 @@
-<center><img src ='lime logo 3.png' width=210, height=100></center>
+<center>
+  <img src ='https://github.com/rashidrao-pk/lime-stratified-examples/assets/25412736/001bfdc7-5e73-4eab-957c-7efc7fed6673' width=210, height=100>
+</center>
 
 <h1> lime-stratified-examples</h1>
 Examples used to generate plots for paper 'Using stratified sampling to improve LIME Image Explanations '
