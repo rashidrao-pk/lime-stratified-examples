@@ -14,7 +14,7 @@ Option: Windows <br>
 Install all the required libraries by running following line:
 
 ```
-pip install -r requiremnets.txt 
+pip install -r requirements.txt 
 ```
 
 <h3> Installation </h3>
