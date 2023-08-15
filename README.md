@@ -1,19 +1,29 @@
-# lime-stratified-examples
+<center><img src ='lime logo 3.png' width=210, height=100></center>
+
+<h1> lime-stratified-examples</h1>
 Examples used to generate plots for paper 'Using stratified sampling to improve LIME Image Explanations '
 
-# Required Libraries
+<h2> 🔧Dependencies and Installation </h2>
+Python<br>
+Tensorflow<br>
+Option: NVIDIA GPU + CUDA <br>
+Option: Windows <br>
+<br>
 Install all the required libraries by running following line:
+
 ```
 pip install -r requiremnets.txt 
 ```
-# Installation
+
+<h3> Installation </h3>
+1. Clone repo<br>
 
 Download zipped file from XXXXXX:
 ```
 wget www.xyz.com/lime-startified-with-examples
 unzip -tar XXXXXXXX
 ```
-in lime-startified/lime/lime-image.py search (CTRL+F) for following line:
+in lime-startified/lime/lime-image.py search for following line:
 ```
 return ret_exp
 ```
@@ -26,6 +36,30 @@ save the file and then build and install it using following lines:
 python setup.py build
 python setup.py install
 ```
-# Run Examples
-1. Run the Examples.ipynb notebook to run the extensive experiments on all seelcted 150 images.
+<h2> Run Examples </h2>
+
+```
+1. Run the Examples.ipynb notebook to run the extensive experiments on all seelcted 150 images
 2. Run Paper_Figures to create figures presented in the paper
+```
+
+<h2>Data Availability:</h2>
+<a href = '#'> 📝 Paper </a>: <br>
+<a href = '#'>⚡ Codes </a> <br>
+<a href = '#'> 📘Example Codes </a><br>
+
+<h2>Authors:</h2>
+
+|  Author  | Affiliation | Profile |
+|  :-------- | :------:  | :--: |
+| --------- |  --------- | --------- |
+
+
+<h2>📜 License and Acknowledgement</h2>
+<p>LIME-Stratified is released under MIT License 2024</p>
+
+<h3>BibTeX:</h3>
+
+```
+xxx
+```
