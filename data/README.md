@@ -4,5 +4,4 @@ Examples used to generate plots for paper 'Using stratified sampling to improve 
 # Data Folder
 1. This folder have dataset of 150 images collected from test set of ILVRC-Kaggle (https://www.kaggle.com)
 2. ImageNet Classes Json file named as 'imagenet_class_index.json'
-3. Segmentation Hyperparameters file named as 'segments_table.csv'
 ```
