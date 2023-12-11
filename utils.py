@@ -13,6 +13,7 @@ from IPython.display import display, HTML
 pd.set_option('display.max_columns', None)
 from skimage.segmentation import mark_boundaries
 from matplotlib.colors import LinearSegmentedColormap
+
 from lime_stratified.lime.wrappers.scikit_image import SegmentationAlgorithm
 display(HTML("<style>.container { width:98% !important; }</style>"))
 from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
@@ -26,10 +27,7 @@ def check_folders(path_):
     path_: Path Verifier    '''
     if not os.path.exists(path_):
         os.makedirs(path_)
-        print(path_, ' created')
-        return 1
-    else:
-        return 0
+        print(f'folder created:\t{path_}')
 def axis_off(ax):
     ax.set_xticks([], []) ; ax.set_yticks([], [])
 #####################################################################################################################
@@ -54,7 +52,7 @@ def get_ImageNet_ClassLabels(json_file=False):
         class_names = [v[1] for v in json.load(file).values()]
     return class_names
 
-def load_model(model_name='ResNet50'):
+def load_model(model_name=None):
     if model_name=='ResNet50':
         model = ResNet50(weights='imagenet')
     if model:
@@ -306,12 +304,12 @@ def plot_heatmap_lime(heatmap,maxval,sub_results,ttl,save_result=False,show_colo
     if save_result:
         plt.savefig(sub_results+'//Heatmap_'+ttl+'.png',transparent = True,bbox_inches = 'tight',pad_inches = 0.02, dpi = 150)
     plt.show()
-def heatmap_from_beta(segments, beta):
-    heatmap = np.zeros_like(segments, dtype=np.float32)
-    for segm, importance in enumerate(beta):
-        heatmap[ segments==segm ] += importance 
-    return heatmap
-
+def heatmap_from_beta(segments=None, beta=None):
+    if segments is not None and beta is not None:
+        heatmap = np.zeros_like(segments, dtype=np.float32)
+        for segm, importance in enumerate(beta):
+            heatmap[ segments==segm ] += importance 
+        return heatmap
 def plot_classification_score(ax,explanation,X,Y,class_probability,draw_quantile=False,
                               quantile=[0.05,0.95],save_image=False,plot_points=1000,plot_everything=True):
     colors = ['#6d9eeb','#f9cb9c']
@@ -405,7 +403,7 @@ def evaluate_explanation(explanation,X,all_Ys,beta,f_x,RC_Y,r2_score,data_to_csv
     data_to_csv['cv_abs_beta']    = np.std(np.abs(beta)) / np.mean(np.abs(beta))
     data_to_csv['cv_beta']        = np.std(beta) / np.mean(beta)
     
-def get_beta_from_expl(expl):
+def get_beta_from_expl(explanation=None):
     '''
     Function get_beta_from_expl will compute beta from explanation
     Args:
@@ -413,11 +411,12 @@ def get_beta_from_expl(expl):
     Result:
         beta: Local Exp for Top Label 
     '''
-    n = len(np.unique(expl.segments))
-    beta = np.zeros(n)
-    for i,v in expl.local_exp[ expl.top_labels[0] ]:
-        beta[i] = v
-    return beta
+    if explanation is not None:
+        n = len(np.unique(explanation.segments))
+        beta = np.zeros(n)
+        for i,v in explanation.local_exp[ explanation.top_labels[0] ]:
+            beta[i] = v
+        return beta
 def get_RCY(Y,f_x):
     '''
     Function get_RCY will take two parameters and will compute the InterQuantile Range (IQR(99-1)) divided by f_x
@@ -495,7 +494,7 @@ def explanation_module(compute_experiments,files,df_seg,DS_path,sub_results_,res
                             X, all_Ys,explanation = explanation_ret #                   split it into 3 variables
                             predicted_cls = explanation.top_labels[0]
                             Y = all_Ys[:, predicted_cls]
-                            beta_arr.append(get_beta_from_expl(explanation))
+                            beta_arr.append(get_beta_from_expl(explanation=explanation))
                             rcY_arr.append(get_RCY(Y, f_x))
                             r2_arr.append(explanation.score[predicted_cls])
                         beta = np.mean(beta_arr, axis=0)
