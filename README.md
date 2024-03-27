@@ -104,5 +104,5 @@ How LIME Image supposed to work and how does it actually works
 
 
 ## Workflow of LIME Image
-How LIME Image supposed to work and how does it actually works
+We breifly overview and the Workflow of LIME Image is presented in the following figure.
 ![How LIME Image supposed to work and how does it actually works!](figs/LIME-Image-workflow.svg)
