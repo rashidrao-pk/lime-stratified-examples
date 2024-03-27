@@ -10,13 +10,13 @@
 
 
 ### PDF:
-<a href = 'https://ojs.aaai.org/index.php/AAAI/article/view/29397'> Accpted Paper in AAAI-24 </a>
+<a href = 'https://ojs.aaai.org/index.php/AAAI/article/view/29397'> Published Paper </a>
 
-### Authors:
+### Authors ✍️:
 [Muhammad Rashid<sup>1</sup>](https://scholar.google.com/citations?user=F5u_Z5MAAAAJ&hl=en), [Elvio G. Amparore<sup>1</sup>](https://scholar.google.com/citations?user=Hivlp1kAAAAJ&hl=en&oi=ao), [Enrico Ferrari<sup>2</sup>](https://scholar.google.com/citations?user=QOflGNIAAAAJ&hl=en&oi=ao), [Damiano Verda<sup>2</sup>](https://scholar.google.com/citations?user=t6o9YSsAAAAJ&hl=en&oi=ao)
 1. University of Torino, Computer Science Department, C.so Svizzera 185, 10149 Torino, Italy, http://www.di.unito.it/do/home.pl
 2. Rulex Innovation Labs, Rulex Inc., Via Felice Romani 9, 16122 Genova, Italy, https://www.rulex.ai/
-### Paper contribution 
+### Paper contribution 📃
 In this paper we:
 - investigate the distribution of the dependent variable in
 the sampled synthetic neighborhood of LIME Image,
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 ```
 
-### Structure of the artifact
+### Structure of the artifact 💻
 
 This artifact is structured as follows:
 
@@ -67,9 +67,8 @@ This artifact is structured as follows:
 
 The [precomputed CSV](https://github.com/rashidrao-pk/lime-stratified-examples/blob/main/result/precomputed_results_1000_1_150_%5B50%2C%20100%2C%20150%2C%20200%5D.csv) file is already included in the `results/` folder.
 
-
 ---
-## How to run the artifact
+## How to run the artifact 📊
 
 The `Run_Benchmark.ipynb` will take a long tame (more than 1 day) to run all the experiments and generate the CSV file. All explanations are computed 10 times and then averaged, to better stabilize the results and reduce randomization.
 
@@ -81,8 +80,8 @@ The `Paper_Figures.ipynb` has several targets: for the single explanations, it w
 You can run `Run_Benchmark.ipynb` to regenerate all the results. Alternatively, the precomputed CSV file used for the paper is included.
 
 Then run  `Paper_Figures.ipynb` to generate the plots.
-## Screenshots
-## Performance Measures to Evaluate Explanations:
+## Screenshots 📷
+## Performance Measures to Evaluate Explanations: 🎯
 <b>How can we evaluate an XAI method for images? to decide the quality of an explanation</b><br>
 we have utilised few evaluation metrices to quantify the base Lime-Image approach and lime_stratified approach including.
 1. Visual Evaluation
@@ -97,7 +96,7 @@ If you use our proposed strategy, please cite us: <br>
 Rashid, M., Amparore, E. G., Ferrari, E., & Verda, D. (2024). Using Stratified Sampling to Improve LIME Image Explanations. Proceedings of the AAAI Conference on Artificial Intelligence, 38(13), 14785-14792. https://doi.org/10.1609/aaai.v38i13.29397 
 ```
 
-## Motivation behind lime-stratified
+## Motivation behind lime-stratified 💪
 
 How LIME Image supposed to work and how does it actually works
 ![How LIME Image supposed to work and how does it actually works!](figs/LIME-concept-compact.svg)
@@ -106,3 +105,8 @@ How LIME Image supposed to work and how does it actually works
 ## Workflow of LIME Image
 We breifly overview and the Workflow of LIME Image is presented in the following figure.
 ![How LIME Image supposed to work and how does it actually works!](figs/LIME-Image-workflow.svg)
+
+
+### Keywords 🔍
+
+XAI · LIME · Stratified Sampling . ML: Transparent, Interpretable, Explainable ML, RU: Stochastic Optimization, SO: Sampling/Simulation-based Search
