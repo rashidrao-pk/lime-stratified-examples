@@ -13,9 +13,12 @@
     </thead>
     <tbody>
         <tr>
-            <td colspan="5" align="center"><i>Main</i></td>
-        </tr>
-        <tr>
+            <td>
+                <a href="https://github.com/DmitryRyumin/AAAI-2024-Papers/blob/main/sections/2024/main/application_domains.md">Application Domains</a>
+            </td>
+            <td>
+                <a href="https://github.com/DmitryRyumin/AAAI-2024-Papers/blob/main/sections/2024/main/application_domains.md">Application Domains</a>
+            </td>
             <td>
                 <a href="https://github.com/DmitryRyumin/AAAI-2024-Papers/blob/main/sections/2024/main/application_domains.md">Application Domains</a>
             </td>
