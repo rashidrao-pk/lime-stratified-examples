@@ -105,7 +105,7 @@ The `Paper_Figures.ipynb` has several targets: for the single explanations, it w
 You can run `Run_Benchmark.ipynb` to regenerate all the results. Alternatively, the precomputed CSV file used for the paper is included.
 
 Then run  `Paper_Figures.ipynb` to generate the plots.
-## Screenshots 📷
+
 ## Performance Measures to Evaluate Explanations: 🎯
 <b>How can we evaluate an XAI method for images? to decide the quality of an explanation</b><br>
 we have utilised few evaluation metrices to quantify the base Lime-Image approach and lime_stratified approach including.
