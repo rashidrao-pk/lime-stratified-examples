@@ -16,9 +16,6 @@
                 <a href="https://doi.org/10.48550/arXiv.2403.17742">Paper Archive Link</a>
             </td>
             <td>
-                <a href="https://doi.org/10.48550/arXiv.2403.17742">Paper Archive Link</a>
-            </td>
-            <td>
                 <a href="https://aaai.org/aaai-conference/"> AAAI Conference Link </a>
             </td>
             <td>
