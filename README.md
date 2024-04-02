@@ -5,6 +5,8 @@
     <thead>
         <tr>
             <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/arxiv-logo.svg" width="45" alt="" /></th>
+            <th> <img src="http://img.shields.io/badge/AAAI-2024-001B37.svg" alt="Conference"> </th>
+            <th> Underline Contents of AAAI-24 </th>
             <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/github_code_developer.svg" width="27" alt="" /></th>
             <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/video.svg" width="27" alt="" /></th>
         </tr>
@@ -15,9 +17,11 @@
                 <a href="https://doi.org/10.48550/arXiv.2403.17742">Paper Archive Link</a>
             </td>
             <td>
-                <a href="https://aaai.org/aaai-conference/"> 
-                <img src="http://img.shields.io/badge/AAAI-2024-001B37.svg" alt="Conference">
-                </a>
+                <a href="https://doi.org/10.48550/arXiv.2403.17742">Paper Archive Link</a>
+            </td>
+            <td> <a href='https://underline.io/events/439/reception'> Underline-AAAI24</a> </td>
+            <td>
+                <a href="https://aaai.org/aaai-conference/"> AAAI Conference Link </a>
             </td>
             <td>
                 <a href="https://github.com/rashidrao-pk/lime_stratified">LIME_Stratified</a>
