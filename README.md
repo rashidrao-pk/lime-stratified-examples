@@ -4,7 +4,6 @@
 <table>
     <thead>
         <tr>
-            <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/arxiv-logo.svg" width="45" alt="" /></th>
             <th> <img src="http://img.shields.io/badge/AAAI-2024-001B37.svg" alt="Conference"> </th>
             <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/github_code_developer.svg" width="27" alt="" /></th>
             <th scope="col"><img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/github_code_developer.svg" width="27" alt="" /></th>
@@ -12,9 +11,6 @@
     </thead>
     <tbody>
         <tr>
-            <td>
-                <a href="https://doi.org/10.48550/arXiv.2403.17742">Paper Archive Link</a>
-            </td>
             <td>
                 <a href="https://aaai.org/aaai-conference/"> AAAI Conference Link </a>
             </td>
@@ -28,7 +24,7 @@
     </tbody>
 </table>
 
-# lime-stratified-examples
+# Lime-Stratified-Examples
 - This Repositry contains codes to reproduce results for our publication <a href='https://doi.org/10.1609/aaai.v38i13.29397'><b>'Using stratified sampling to improve LIME Image explanations'</b></a> published at <b><a href='https://ojs.aaai.org/index.php/AAAI/index'> Proceedings of the AAAI Conference on Artificial Intelligence</b> </a> by Modifying <b>[Lime-Image](https://github.com/marcotcr/lime)</b> and by introducing a novel sampling stragtegy into LIME-Image. The proposed strategy merged with Orignal LIME and named as <a href='https://github.com/rashidrao-pk/lime_stratified' ><b> LIME_STRATIFIED</b></a>. 
 
 - The Effect of introducing this sampling stratgey is presented in `Results` Section and can be validated by running codes in next few sections.
@@ -37,13 +33,21 @@
 <h1> Using Stratified Sampling to Improve LIME Image Explanations </h1>
 
 
-### PDF:
-<a href = 'https://ojs.aaai.org/index.php/AAAI/article/view/29397'> Published Paper </a>
 
-### Authors ✍️:
-[Muhammad Rashid<sup>1</sup>](https://scholar.google.com/citations?user=F5u_Z5MAAAAJ&hl=en), [Elvio G. Amparore<sup>1</sup>](https://scholar.google.com/citations?user=Hivlp1kAAAAJ&hl=en&oi=ao), [Enrico Ferrari<sup>2</sup>](https://scholar.google.com/citations?user=QOflGNIAAAAJ&hl=en&oi=ao), [Damiano Verda<sup>2</sup>](https://scholar.google.com/citations?user=t6o9YSsAAAAJ&hl=en&oi=ao)
-1. University of Torino, Computer Science Department, C.so Svizzera 185, 10149 Torino, Italy, http://www.di.unito.it/do/home.pl
-2. Rulex Innovation Labs, Rulex Inc., Via Felice Romani 9, 16122 Genova, Italy, https://www.rulex.ai/
+## Paper PDF:
+Paper can be found at [LINK](https://ojs.aaai.org/index.php/AAAI/article/view/29397) and also on <a href=''> <a href = 'https://arxiv.org/abs/2403.17742'> <img src="https://cdn.jsdelivr.net/gh/DmitryRyumin/NewEraAI-Papers@main/images/arxiv-logo.svg" width="45" alt="" /> </a>
+</a>.
+
+### Authors ✍️
+
+| Sr. No. | Author Name | Affiliation | Google Scholar | 
+| :--:    | :--:        | :--:        | :--:           | 
+| 1. | Muhammad Rashid | University of Torino, Computer Science Department, C.so Svizzera 185, 10149 Torino, Italy | [Muhammad Rashid](https://scholar.google.com/citations?user=F5u_Z5MAAAAJ&hl=en) | 
+| 2. | Elvio G. Amparore | University of Torino, Computer Science Department, C.so Svizzera 185, 10149 Torino, Italy | [Elvio G. Amparore](https://scholar.google.com/citations?user=Hivlp1kAAAAJ&hl=en&oi=ao) | 
+| 3. | Enrico Ferrari | Rulex Innovation Labs, Rulex Inc., Via Felice Romani 9, 16122 Genova, Italy | [Enrico Ferrari](https://scholar.google.com/citations?user=QOflGNIAAAAJ&hl=en&oi=ao) | 
+| 4. | Damiano Verda | Rulex Innovation Labs, Rulex Inc., Via Felice Romani 9, 16122 Genova, Italy | [Damiano Verda](https://scholar.google.com/citations?user=t6o9YSsAAAAJ&hl=en&oi=ao) |
+
+
 ### Paper contribution 📃
 In this paper we:
 - investigate the distribution of the dependent variable in
@@ -102,11 +106,11 @@ The `Paper_Figures.ipynb` has several targets: for the single explanations, it w
 ---
 ## Run Examples
 
-You can run `Run_Benchmark.ipynb` to regenerate all the results. Alternatively, the precomputed CSV file used for the paper is included.
+1. You can run [`Run_Benchmark.ipynb`](/Run_Benchmark.ipynb.ipynb) to regenerate all the results. Alternatively, the precomputed CSV file used for the paper is included.
 
-Then run  `Paper_Figures.ipynb` to generate the plots.
+2. Then run  [`Paper_Figures.ipynb`](/Paper_Figures.ipynb) to generate the plots.
 
-## Performance Measures to Evaluate Explanations: 🎯
+## Performance Measures to Evaluate Image Explanations: 🎯
 <b>How can we evaluate an XAI method for images? to decide the quality of an explanation</b><br>
 we have utilised few evaluation metrices to quantify the base Lime-Image approach and lime_stratified approach including.
 1. Visual Evaluation
