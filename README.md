@@ -99,22 +99,16 @@ The [precomputed CSV](https://github.com/rashidrao-pk/lime-stratified-examples/b
 ---
 ## How to run the artifact 📊
 
-The `Run_Benchmark.ipynb` will take a long tame (more than 1 day) to run all the experiments and generate the CSV file. All explanations are computed 10 times and then averaged, to better stabilize the results and reduce randomization.
 
-The `Paper_Figures.ipynb` has several targets: for the single explanations, it will take a few minutes. For the plots generated starting from the CSV file, in will take a few seconds.
+1. The [`Run_Benchmark.ipynb`](/Run_Benchmark.ipynb.ipynb) will take a long tame (more than 1 day) to run all the experiments and generate the CSV file. All explanations are computed 10 times and then averaged, to better stabilize the results and reduce randomization.
 
----
-## Run Examples
+2. The [`Paper_Figures.ipynb`](/Paper_Figures.ipynb) has several targets: for the single explanations, it will take a few minutes. For the plots generated starting from the [CSV](/result/filename?.csv) file, in will take a few seconds.
 
-1. You can run [`Run_Benchmark.ipynb`](/Run_Benchmark.ipynb.ipynb) to regenerate all the results. Alternatively, the precomputed CSV file used for the paper is included.
-
-2. Then run  [`Paper_Figures.ipynb`](/Paper_Figures.ipynb) to generate the plots.
 
 ## Performance Measures to Evaluate Image Explanations: 🎯
 <b>How can we evaluate an XAI method for images? to decide the quality of an explanation</b><br>
 we have utilised few evaluation metrices to quantify the base Lime-Image approach and lime_stratified approach including.
-1. Visual Evaluation
-    - Heatmaps for explanation
+1. Visual Evaluation (Heatmaps for explanation)
 2. Statistical Evaluation
     - Coeffecient of Variation $(CV(\beta))$
     - Inter-Quantile Range Coverage $(RC\_Y)$
@@ -139,3 +133,47 @@ We breifly overview and the Workflow of LIME Image is presented in the following
 ### Keywords 🔍
 
 XAI · LIME · Stratified Sampling . ML: Transparent, Interpretable, Explainable ML, RU: Stochastic Optimization, SO: Sampling/Simulation-based Search
+
+
+### Repositry Details:
+
+<img src="https://img.shields.io/badge/version-v0.0.0-rc0" alt="Version">
+      <a href ="https://github.com/DmitryRyumin/lime-stratified-examples/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+      </a>
+<a href="https://github.com/rashidrao-pk/">
+<img src="https://img.shields.io/github/contributors/rashidrao-pk/lime-stratified-examples" alt="GitHub contributors">
+</a>
+<img src="https://img.shields.io/github/repo-size/rashidrao-pk/lime-stratified-examples" alt="GitHub repo size">
+      <a href="https://github.com/rashidrao-pk/">
+        <img src="https://img.shields.io/github/commit-activity/t/rashidrao-pk/lime-stratified-examples" alt="GitHub commit activity (branch)">
+      </a>
+
+
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/graphs/contributors">
+<img src="https://img.shields.io/github/contributors/rashidrao-pk/lime-stratified-examples" alt="GitHub contributors">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/issues?q=is%3Aissue+is%3Aclosed">
+<img src="https://img.shields.io/github/issues-closed/rashidrao-pk/lime-stratified-examples" alt="GitHub closed issues">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/issues">
+<img src="https://img.shields.io/github/issues/rashidrao-pk/lime-stratified-examples" alt="GitHub issues">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/pulls?q=is%3Apr+is%3Aclosed">
+<img src="https://img.shields.io/github/issues-pr-closed/rashidrao-pk/lime-stratified-examples" alt="GitHub closed pull requests">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/pulls">
+<img src="https://img.shields.io/github/issues-pr/rashidrao-pk/lime-stratified-examples" alt="GitHub pull requests">
+</a>
+
+<img src="https://img.shields.io/github/last-commit/rashidrao-pk/lime-stratified-examples" alt="GitHub last commit">
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/watchers">
+<img src="https://img.shields.io/github/watchers/rashidrao-pk/lime-stratified-examples?style=flat" alt="GitHub watchers">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/forks">
+<img src="https://img.shields.io/github/forks/rashidrao-pk/lime-stratified-examples?style=flat" alt="GitHub forks">
+</a>
+<a href="https://github.com/rashidrao-pk/lime-stratified-examples/stargazers">
+<img src="https://img.shields.io/github/stars/rashidrao-pk/lime-stratified-examples?style=flat" alt="GitHub Repo stars">
+</a>
+<img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Frashidrao-pk&label=Visitors&countColor=%23263759&style=flat" alt="Visitors">
